@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Cronograma de estudos PMPE com foco total até fevereiro de 2027, disponível offline.">
+<title>Cronograma PMPE — Foco Total até Fevereiro</title>
+
+<style>
+:root{
+  --bg:#F2F4F6;--surface:#FFFFFF;--ink:#1E2328;--muted:#5C6670;--line:#D9DEE3;
+  --rev:#7A5AC8;--rev-bg:#EEE9FA;--con:#1F5FA8;--con-bg:#E3EEF9;--que:#B87A00;--que-bg:#FFF2CC;
+  --tab:#2B3036;--tab-ink:#FFFFFF;--accent:#F2B705;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14181C;--surface:#1E242A;--ink:#EDEFF1;--muted:#98A3AD;--line:#323A42;
+  --rev:#B9A2F0;--rev-bg:#2A2340;--con:#7DB4EE;--con-bg:#18283A;--que:#F2C14E;--que-bg:#3A2F10;
+  --tab:#2E363E;--tab-ink:#FFFFFF;}}
+:root[data-theme="dark"]{
+  --bg:#14181C;--surface:#1E242A;--ink:#EDEFF1;--muted:#98A3AD;--line:#323A42;
+  --rev:#B9A2F0;--rev-bg:#2A2340;--con:#7DB4EE;--con-bg:#18283A;--que:#F2C14E;--que-bg:#3A2F10;
+  --tab:#2E363E;--tab-ink:#FFFFFF;}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Barlow,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:520px;margin:0 auto;padding:20px 16px 40px}
+h1{font:700 30px/1.05 "Barlow Condensed","Arial Narrow",sans-serif;margin:0 0 4px;letter-spacing:.2px}
+.sub{color:var(--muted);margin:0 0 16px;font-size:14px}
+.road{height:6px;margin:0 0 16px;border-radius:3px;background:repeating-linear-gradient(90deg,var(--accent) 0 28px,transparent 28px 44px)}
+.tabs{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:14px}
+.tabs button{font:600 14px Barlow,system-ui,sans-serif;padding:10px 0;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;cursor:pointer;min-height:44px}
+.tabs button[aria-selected="true"]{background:var(--tab);color:var(--tab-ink);border-color:var(--tab)}
+.tabs button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.today{display:block;font-size:10px;font-weight:500;color:var(--accent);line-height:1}
+.head{display:flex;justify-content:space-between;align-items:baseline;margin:6px 2px 10px}
+.head h2{font:700 24px "Barlow Condensed","Arial Narrow",sans-serif;margin:0}
+.head span{color:var(--muted);font-size:14px}
+.note{background:var(--surface);border-left:4px solid var(--accent);padding:8px 12px;border-radius:6px;font-size:14px;margin-bottom:10px;color:var(--muted)}
+.blk{display:grid;grid-template-columns:54px 1fr;gap:10px;margin-bottom:8px}
+.t{font-weight:600;font-size:15px;padding-top:12px;color:var(--muted)}
+.card{border-radius:10px;padding:10px 12px;border-left:5px solid}
+.card b{display:block;font-size:12px;font-weight:600;margin-bottom:2px}
+.card div{font-size:16px;font-weight:500}
+.card small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.rev{background:var(--rev-bg);border-color:var(--rev)}.rev b{color:var(--rev)}
+.con{background:var(--con-bg);border-color:var(--con)}.con b{color:var(--con)}
+.que{background:var(--que-bg);border-color:var(--que)}.que b{color:var(--que)}
+.pause{border:1px dashed var(--line);color:var(--muted);border-radius:10px;padding:8px 12px;font-size:14px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-top:14px;padding:0 14px}
+summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:44px}
+details p,details li{font-size:14px;color:var(--muted);margin:0 0 8px}
+details ul{padding-left:18px;margin:0 0 10px}
+details strong{color:var(--ink)}
+.foot{color:var(--muted);font-size:12px;margin-top:16px}
+
+.priority-intro{font-size:14px;color:var(--muted);margin:8px 0 12px}.priority-table{width:100%;border-collapse:collapse;font-size:13px}.priority-table th,.priority-table td{padding:8px 5px;text-align:left;border-bottom:1px solid var(--line)}.priority-table th{font-size:12px;color:var(--muted)}.priority-section{margin-top:24px}.priority-section h2{font:700 25px "Barlow Condensed",sans-serif;margin:0 0 8px}.priority-section h3{font-size:16px;margin:15px 0 7px}.priority-section details{margin-top:8px}.priority-section ol{padding-left:23px;margin:0 0 12px}.priority-section li{margin:5px 0;font-size:14px}.priority-section .small{font-size:12px;color:var(--muted)}.priority-section a{color:var(--con)}
+</style>
+<link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#20262d"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="icon" href="./icon-192.png"><style>
+.app-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.menu-wrap{position:relative}.menu-btn{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;min-width:44px;min-height:44px;font-size:25px;cursor:pointer}.menu-panel{position:absolute;right:0;top:50px;z-index:10;width:225px;background:var(--surface);border:1px solid var(--line);box-shadow:0 12px 30px #0002;border-radius:12px;padding:6px}.menu-panel[hidden],.app-view[hidden]{display:none!important}.menu-panel button{display:block;width:100%;padding:12px;text-align:left;border:0;border-radius:8px;background:transparent;color:var(--ink);font:600 14px system-ui;cursor:pointer}.menu-panel button:hover{background:var(--con-bg)}.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}.panel h2{font-size:20px;margin:0 0 8px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600}.field.wide{grid-column:1/-1}.field input,.field select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:11px;border-radius:8px;font:inherit;min-height:44px}.primary{background:var(--tab);color:var(--tab-ink);border:0;border-radius:9px;padding:12px 16px;font-weight:700;min-height:44px;cursor:pointer}.secondary{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px;cursor:pointer}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:var(--con-bg);border-radius:10px;padding:12px 8px;text-align:center}.stat b{font-size:23px;display:block}.stat small{font-size:11px;color:var(--muted)}.chart{display:flex;gap:8px;align-items:flex-end;min-height:170px;padding:10px 2px 4px;border-bottom:1px solid var(--line)}.chart-col{flex:1;min-width:0;text-align:center}.bar{background:var(--rev);border-radius:6px 6px 0 0;min-height:2px;margin:auto;width:70%;max-width:38px}.chart-col span{font-size:11px;color:var(--muted);display:block}.chart-col b{font-size:12px}.record{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:10px 0;font-size:13px}.record button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px;border-radius:8px}.muted{color:var(--muted);font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.empty{color:var(--muted);font-size:14px;padding:20px 0;text-align:center}.topback{margin:4px 0 12px}.priority-section{margin-top:0}.section-title{font:700 25px 'Arial Narrow',system-ui,sans-serif;margin:8px 0}.notice{font-size:12px;color:var(--muted)}
+</style></head>
+<body>
+<main><div class="app-header"><div><h1>Cronograma PMPE</h1><p class="sub">Foco Total até Fevereiro · Soldado · 15h/semana</p></div><div class="menu-wrap"><button class="menu-btn" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">⋮</button><nav class="menu-panel" id="menuPanel" hidden aria-label="Seções do aplicativo"><button data-view="schedule">📅 Cronograma</button><button data-view="performance">📊 Desempenho semanal</button><button data-view="priorities">🎯 Prioridades PRF (em espera)</button><button data-view="future">🧩 Próximas seções</button><button data-view="backup">💾 Backup dos dados</button></nav></div></div><div class="road" aria-hidden="true"></div><section class="app-view" id="view-schedule">
+
+  <div class="tabs" id="tabs" role="tablist" aria-label="Dias da semana"></div>
+  <div id="day"></div>
+
+  <details>
+    <summary>Quando revisar o que estudei?</summary>
+    <ul>
+      <li><strong>Dia seguinte:</strong> 10 min lembrando sem olhar + refazer os erros.</li>
+      <li><strong>Próxima aula da matéria:</strong> 10 min antes do conteúdo novo.</li>
+      <li><strong>~3 semanas e ~6 semanas:</strong> 15 a 20 min nos blocos de revisão do fim de semana.</li>
+    </ul>
+    <p>Sem tempo? Revise primeiro o tópico com menor % de acerto.</p>
+  </details>
+
+  <details>
+    <summary>Regras rápidas de adaptação</summary>
+    <ul>
+      <li><strong>Perdi um dia:</strong> não compense. O tópico vai para a próxima sessão da matéria; faça ao menos 25 min de questões.</li>
+      <li><strong>Prova na escola:</strong> escola primeiro. Só revisão + questões (45 min).</li>
+      <li><strong>Muito cansado:</strong> só revisão e questões, ou durma.</li>
+      <li><strong>Abaixo de 50% por 2 semanas:</strong> mais revisão, refazer erros, achar a causa (teoria, interpretação, memória ou prática).</li>
+      <li><strong>Acima de 80% por 2 semanas:</strong> espaçar revisões e focar no tópico mais fraco.</li>
+    </ul>
+  </details>
+
+</section><section class="app-view" id="view-priorities" hidden><button class="secondary topback" data-view="schedule">← Voltar</button><section class="priority-section" aria-labelledby="priority-title"><h2 id="priority-title">Prioridades de estudo por matéria</h2><p class="priority-intro">Guia estratégico com base na prova FUNCAB de 2014 (60 questões, 90 pontos), no programa anterior e no sumário da sua apostila. A ordem abaixo é uma recomendação de estudo, <strong>não</strong> um ranking estatístico comprovado de incidência por assunto. O novo edital poderá mudar tudo.</p><h3>Distribuição real dos pontos em 2014</h3><table class="priority-table"><thead><tr><th>Disciplina</th><th>Questões</th><th>Pontos</th></tr></thead><tbody><tr><td>Português</td><td>12</td><td>24</td></tr><tr><td>Direito Administrativo</td><td>6</td><td>9</td></tr><tr><td>Legislação PRF</td><td>6</td><td>9</td></tr><tr><td>Direito Constitucional</td><td>6</td><td>9</td></tr><tr><td>Administração</td><td>6</td><td>9</td></tr><tr><td>Arquivologia</td><td>6</td><td>9</td></tr><tr><td>Informática</td><td>6</td><td>9</td></tr><tr><td>Raciocínio Lógico</td><td>6</td><td>6</td></tr><tr><td>Ética e Conduta Pública</td><td>6</td><td>6</td></tr></tbody></table><p class="small">Português representava 26,7% dos pontos. Cada matéria específica, 10%. Ética e Raciocínio Lógico, 6,7% cada.</p><h3>Ordem sugerida de conteúdos</h3><details><summary>1. Português · 24/90 pontos</summary><ol><li>Interpretação e compreensão de textos (p. 9)</li><li>sintaxe da oração e período (p. 37)</li><li>pontuação (p. 55)</li><li>concordância (p. 50)</li><li>regência (p. 48)</li><li>crase (p. 17)</li><li>classes de palavras (p. 15)</li><li>ortografia e acentuação (p. 11)</li><li>significação (p. 58)</li><li>redação oficial (p. 60).</li></ol></details><details><summary>2. Direito Administrativo · 9/90 pontos</summary><ol><li>Atos administrativos</li><li>agentes públicos e Lei 8.112/1990</li><li>poderes administrativos</li><li>organização administrativa</li><li>princípios</li><li>responsabilidade civil do Estado</li><li>processo administrativo (Lei 9.784/1999)</li><li>controle</li><li>licitações e contratos (estudar legislação vigente, Lei 14.133/2021, e conferir novo edital).</li></ol></details><details><summary>3. Legislação PRF · 9/90 pontos</summary><ol><li>Art. 144 da Constituição (p. 387)</li><li>art. 20 da Lei 9.503/1997 (p. 389)</li><li>Decreto 1.655/1995 (p. 392)</li><li>Decreto 11.348/2023 (p. 394). Conferir vigência e alterações antes de memorizar.</li></ol></details><details><summary>4. Direito Constitucional · 9/90 pontos</summary><ol><li>Direitos e garantias fundamentais</li><li>Administração Pública (arts. 37 a 41)</li><li>organização do Estado</li><li>poderes da União</li><li>segurança pública (art. 144)</li><li>princípios fundamentais</li><li>controle de constitucionalidade, conforme programa do edital.</li></ol></details><details><summary>5. Administração · 9/90 pontos</summary><ol><li>Evolução da Administração Pública e reforma do Estado (p. 221)</li><li>gestão de pessoas (p. 227)</li><li>estruturas e departamentalização (p. 252)</li><li>liderança e motivação (p. 258)</li><li>gestão por competências (p. 247)</li><li>desempenho (p. 235)</li><li>recrutamento e seleção (p. 260)</li><li>treinamento e desenvolvimento (p. 264).</li></ol></details><details><summary>6. Arquivologia · 9/90 pontos</summary><ol><li>Princípios arquivísticos (p. 269)</li><li>gestão documental (p. 278)</li><li>classificação (p. 279)</li><li>arquivamento e ordenação (p. 281)</li><li>tabela de temporalidade (p. 287)</li><li>protocolo (p. 294)</li><li>preservação e conservação (p. 297).</li></ol></details><details><summary>7. Informática · 9/90 pontos</summary><ol><li>Editor de textos, planilhas e apresentações (p. 303)</li><li>internet, intranet, navegadores, pesquisa e e-mail (p. 339)</li><li>sistemas de informação (p. 355)</li><li>segurança da informação (p. 359). Priorizar prática e questões recentes.</li></ol></details><details><summary>8. Raciocínio Lógico · 6/90 pontos</summary><ol><li>Proposições e conectivos (p. 148–150)</li><li>tabelas-verdade (p. 152)</li><li>equivalências e De Morgan (p. 155–160)</li><li>argumentação (p. 147)</li><li>diagramas (p. 165)</li><li>conjuntos (p. 180)</li><li>contagem e probabilidade (p. 169)</li><li>problemas aritméticos e matriciais (p. 188).</li></ol></details><details><summary>9. Ética e Conduta Pública · 6/90 pontos</summary><ol><li>Ética e moral (p. 99)</li><li>princípios e valores (p. 100)</li><li>cidadania (p. 102)</li><li>ética e função pública (p. 105)</li><li>ética no setor público (p. 106)</li><li>Decreto 1.171/1994 (p. 107)</li><li>Decreto 6.029/2007 (p. 120)</li><li>regime disciplinar da Lei 8.112/1990 (p. 121)</li><li>improbidade administrativa, Lei 8.429/1992 (p. 126), com alterações atuais.</li></ol></details><p class="priority-intro"><strong>Como usar:</strong> na próxima sessão de cada matéria, siga o primeiro assunto ainda não dominado. Após teoria, resolva questões e marque erros. Se ficar abaixo de 70% em dois blocos, repita o assunto antes de avançar. Não elimine matérias de menor peso. Páginas indicadas são do sumário fotografado, não do edital.</p><p class="small"><strong>Fontes:</strong> <a href="https://folha.qconcursos.com/n/concurso-prf-nivel-medio-saiba-como-foi-a-ultima-prova-de-agente" target="_blank" rel="noopener">distribuição da prova 2014</a> · <a href="https://www.tecconcursos.com.br/guias/prf-2014/agente-administrativo-prf/-/-/edital-verticalizado" target="_blank" rel="noopener">programa verticalizado de 2014</a>. Verificar legislação atualizada e eventual novo edital.</p></section></section>
+  <section class="app-view" id="view-performance" hidden><button class="secondary topback" data-view="schedule">← Voltar</button><h2 class="section-title">Desempenho semanal</h2><p class="muted">Registre suas questões. O gráfico mostra os erros de cada semana (segunda a domingo).</p><div class="panel"><h2>Registrar questões</h2><form id="recordForm" class="form-grid"><label class="field wide">Disciplina<select id="subject" required></select></label><label class="field">Data<input id="recordDate" type="date" required></label><label class="field">Questões feitas<input id="total" type="number" min="1" step="1" required></label><label class="field">Acertos<input id="correct" type="number" min="0" step="1" required></label><label class="field wide">Assunto (opcional)<input id="topic" maxlength="100" placeholder="Ex.: Concordância verbal"></label><button class="primary field wide" type="submit">Salvar resultado</button></form><p class="notice" id="formMessage" role="status"></p></div><div class="stats"><div class="stat"><b id="statTotal">0</b><small>Questões na semana</small></div><div class="stat"><b id="statErrors">0</b><small>Erros na semana</small></div><div class="stat"><b id="statRate">0%</b><small>Taxa de acertos</small></div></div><div class="panel"><h2>Erros nas últimas 8 semanas</h2><div class="chart" id="weeklyChart" role="img" aria-label="Gráfico de erros por semana"></div><p class="notice">Semanas sem registros aparecem com zero. Os dados ficam neste dispositivo.</p></div><div class="panel"><h2>Erros por matéria nesta semana</h2><div id="subjectStats"></div></div><div class="panel"><h2>Histórico de registros</h2><div id="recordList"></div></div></section><section class="app-view" id="view-future" hidden><button class="secondary topback" data-view="schedule">← Voltar</button><h2 class="section-title">Próximas seções</h2><div class="panel"><h2>Espaço para evoluir</h2><p class="muted">Estrutura preparada para novos módulos, como metas, simulados, revisões e acompanhamento por assunto. Nenhum desses recursos foi ativado ainda.</p></div></section><section class="app-view" id="view-backup" hidden><button class="secondary topback" data-view="schedule">← Voltar</button><h2 class="section-title">Backup local</h2><div class="panel"><p class="muted">Seus resultados são salvos apenas neste navegador. Exporte um arquivo JSON para evitar perder dados ao limpar o navegador ou trocar de celular.</p><div class="actions"><button id="exportData" class="primary">Exportar JSON</button><label class="secondary" style="cursor:pointer">Importar JSON<input type="file" id="importData" accept=".json,application/json" hidden></label></div><p id="backupMessage" class="notice" role="status"></p></div></section>
+  <p class="foot">Prioridades orientativas baseadas no edital de 2014. A nova seleção ainda não tem edital confirmado. Nº de questões por bloco do cronograma é estimativa.</p>
+</main>
+<script>
+var R="rev",C="con",Q="que";
+var D=[
+ {n:"Dom",f:"Domingo",tot:"3h15",note:"Foco PMPE: redação semanal e reforço de Português com questões no estilo da AOCP.",b:[
+  ["09:00",R,"Informática e Direitos Humanos de sábado + dúvidas da semana","25 min"],
+  ["09:25",C,"PMPE · Redação dissertativo-argumentativa","80 min · escrever e conferir pelos critérios da AOCP"],
+  ["10:45","P","Pausa","10 min"],
+  ["10:55",C,"PMPE · Português (reforço AOCP)","50 min"],
+  ["11:45",Q,"Português · questões AOCP","40 min"]]},
+ {n:"Seg",f:"Segunda",tot:"1h30",note:"Dia leve por causa do sono. Exercício das 16:40 às ~17:20.",b:[
+  ["19:00",R,"Português e Redação de domingo","15 min"],
+  ["19:15",C,"BASE COMUM · Português","40 min"],
+  ["19:55",Q,"Português","35 min"]]},
+ {n:"Ter",f:"Terça",tot:"1h45",b:[
+  ["19:00",R,"Português de segunda","15 min"],
+  ["19:15",C,"PMPE · História de Pernambuco","50 min"],
+  ["20:05",Q,"História de Pernambuco","40 min"]]},
+ {n:"Qua",f:"Quarta",tot:"1h45",note:"Exercício das 16:40 às ~17:20.",b:[
+  ["19:00",R,"História de Pernambuco de terça","15 min"],
+  ["19:15",C,"BASE COMUM · Raciocínio Lógico","50 min"],
+  ["20:05",Q,"Raciocínio Lógico","40 min"]]},
+ {n:"Qui",f:"Quinta",tot:"1h45",note:"Foco PMPE: estude um tópico de Legislação Extravagante ou Estatuto PMPE por sessão e faça questões do assunto.",b:[
+  ["19:00",R,"Raciocínio Lógico de quarta + dúvidas de Legislação PMPE","15 min"],
+  ["19:15",C,"PMPE · Legislação Extravagante / Estatuto PMPE","50 min"],
+  ["20:05",Q,"Legislação PMPE · matéria do dia","40 min"]]},
+ {n:"Sex",f:"Sexta",tot:"1h45",b:[
+  ["19:00",R,"Legislação Extravagante / Estatuto PMPE de quinta","15 min"],
+  ["19:15",C,"BASE COMUM · Direito Constitucional","50 min"],
+  ["20:05",Q,"Direito Constitucional","40 min"]]},
+ {n:"Sáb",f:"Sábado",tot:"3h15",note:"Sábado e domingo têm exatamente 3h15 de estudo efetivo; as pausas não entram na conta.",b:[
+  ["08:00",R,"Direito Constitucional de sexta + erros da semana","15 min"],
+  ["08:15",C,"BASE COMUM · Informática","50 min"],
+  ["09:05",Q,"Informática","40 min"],
+  ["09:45","P","Pausa","15 min"],
+  ["10:00",C,"PMPE · Direitos Humanos","50 min"],
+  ["10:50",Q,"Direitos Humanos","40 min"]]}
+];
+var L={rev:"Revisão",con:"Conteúdo",que:"Questões"};
+var order=[1,2,3,4,5,6,0]; // seg..dom
+var tabs=document.getElementById("tabs"),day=document.getElementById("day");
+var today=new Date().getDay(),sel=today;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function render(){
+  tabs.innerHTML="";
+  order.forEach(function(i){
+    var d=D[i],b=document.createElement("button");
+    b.setAttribute("role","tab");b.setAttribute("aria-selected",i===sel);
+    b.innerHTML=d.n+(i===today?'<span class="today">hoje</span>':'');
+    b.onclick=function(){sel=i;render()};
+    tabs.appendChild(b);
+  });
+  var d=D[sel],h='<div class="head"><h2>'+d.f+'</h2><span>'+d.tot+' de estudo</span></div>';
+  if(d.note)h+='<div class="note">'+esc(d.note)+'</div>';
+  d.b.forEach(function(x){
+    h+='<div class="blk"><div class="t">'+x[0]+'</div>';
+    h+=x[1]==="P"?'<div class="pause">'+x[2]+' · '+x[3]+'</div>'
+      :'<div class="card '+x[1]+'"><b>'+L[x[1]]+'</b><div>'+esc(x[2])+'</div><small>'+x[3]+'</small></div>';
+    h+='</div>';
+  });
+  day.innerHTML=h;
+}
+render();
+</script><script src="./app.js" defer></script>
+</body>
+</html>
